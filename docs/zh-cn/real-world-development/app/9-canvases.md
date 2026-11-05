@@ -43,14 +43,14 @@ Tailspin Toys 已包含用于探索数据库的画布。使用它了解画布如
 
 先使用项目现有的 Database Explorer 画布。通过可用的示例，可以在自行创建画布前了解存储库范围的画布如何工作。
 
-1. 确认筛选拉取请求 (PR) 已合并，并更新本地 `main`。
+1. 检查画布功能是否可用，并确认筛选拉取请求 (PR) 已合并，然后更新本地 `main`。如果功能不可用，请记录阻塞原因，并使用只读替代方案，或直接继续总结课程。
 2. 返回 GitHub Copilot app，选择 **Home screen**。
 3. 确认已选择 `tailspin-toys` 存储库。
 4. 基于更新后的 `main` 在 **new working tree** 中创建会话，再选择 **Interactive** 模式。
 5. 要求 Copilot 根据需要准备本地数据库，并打开现有画布且不做更改：
 
    ```plaintext
-   Set up the local database if needed, then open the repository's Database Explorer canvas. Do not change any files.
+   如有需要，请设置本地数据库，然后打开存储库的 Database Explorer 画布。不要更改任何文件。
    ```
 
 6. 在 Database Explorer 中浏览可用表，并选择 `games`。
@@ -74,9 +74,9 @@ Tailspin Toys 已包含用于探索数据库的画布。使用它了解画布如
 1. 在同一会话中输入 `/create-canvas`，再描述要创建的画布：
 
    ```plaintext
-   Create a Kanban triage canvas for this repo's open issues and save it under .github/extensions/. Highlight the three issues you'd prioritize and explain why, with the rest below. Include summaries and links.
+   为此存储库中未关闭的议题创建一个 Kanban 分类画布，并保存在 .github/extensions/ 下。突出显示你会优先处理的三个议题并说明原因，其余议题列在下面。添加摘要和链接。
 
-   Give each card an "Add to current context" action that adds the issue details without starting work or changing the issue. Make it keyboard-accessible and open it so I can try it.
+   为每张卡片添加“Add to current context”操作，将议题详情添加到当前上下文，但不要开始处理或更改议题。确保支持键盘操作，并打开画布让我试用。
    ```
 
 Copilot 会在 `.github/extensions` 下创建画布扩展，并在应用右侧面板中打开共享界面。生成的扩展是可执行的存储库内容，而不只是可视工件，因此接下来需要检查其文件和行为。

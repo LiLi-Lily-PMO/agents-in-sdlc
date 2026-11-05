@@ -44,7 +44,7 @@ Tailspin Toys 使用 `quality-checks` 技能运行单元测试、lint 和类型�
 2. 使用以下提示词调用该技能：
 
   ```plaintext
-  Run the quality-checks skill for unit tests, lint, and type checks.
+  运行 quality-checks 技能，执行单元测试、lint 和类型检查。
   ```
 
 3. 查看最后生成的报告。
@@ -58,9 +58,9 @@ Tailspin Toys 使用 `quality-checks` 技能运行单元测试、lint 和类型�
 3. 将以下章节添加到文件末尾：
 
   ```markdown
-  ## Results output formatting
+  ## 结果输出格式
 
-  Upon completion, report each command that ran and whether it passed, failed, or was blocked. Include test counts, durations, errors, warnings, and other metrics only when the tool reports them. Identify the next action for any failure or blocker, and never describe a skipped or incomplete check as passed.
+  完成后，报告运行的每条命令，并说明其通过、失败或受阻。只有工具报告了测试数量、耗时、错误、警告和其他指标时，才将这些信息包含在报告中。对于任何失败或阻塞项，请指出下一步操作；绝不要将跳过或未完成的检查描述为已通过。
   ```
 
 文件会自动保存。
@@ -73,7 +73,7 @@ Tailspin Toys 使用 `quality-checks` 技能运行单元测试、lint 和类型�
 2. 使用以下提示词调用该技能：
 
   ```plaintext
-  Run the quality-checks skill for unit tests, lint, and type checks.
+  运行 quality-checks 技能，执行单元测试、lint 和类型检查。
   ```
 
 3. 查看最后生成的报告。

@@ -19,7 +19,7 @@ lastUpdated: 2026-09-28
 在 Copilot Chat 中发送以下提示词：
 
 ```plaintext
-Create a colorful, accessible space exploration quiz with 10 questions in a single index.html. Add a progress bar, score counter, animated correct and incorrect feedback, and a results screen. Use no server or dependencies. Open it in the VS Code integrated browser.
+使用单个 index.html 创建一个色彩鲜明、无障碍的太空探索问答游戏，包含 10 道题。添加进度条、得分计数器、答对和答错时的动画反馈，以及结果页面。不使用服务器或依赖项。在 VS Code 集成浏览器中打开。
 ```
 
 1. 在编辑器中审查生成的文件。
@@ -35,7 +35,7 @@ Create a colorful, accessible space exploration quiz with 10 questions in a sing
 3. 发送以下提示词，并观察预览重新加载：
 
    ```plaintext
-   Using the selected element, make the answer buttons feel more tactile: add a subtle press state, a clearer focus ring for keyboard users, and a smoother transition into the correct and incorrect colors. Change nothing else.
+   基于所选元素，增强答案按钮的触感：添加细微的按下状态，为键盘用户提供更清晰的焦点环，并让按钮更平滑地切换到答对和答错时的颜色。不要更改其他内容。
    ```
 
 4. 保留更改之前，先在 **Source Control** 中查看差异。

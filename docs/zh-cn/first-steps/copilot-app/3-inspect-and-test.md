@@ -51,7 +51,7 @@ lastUpdated: 2026-10-12
 集成浏览器是真正的浏览器，智能体可以操作测验并验证行为。发送以下提示词：
 
 ```plaintext
-Run a browser-level smoke test for the quiz in the integrated browser. Check keyboard navigation, score updates, correct and incorrect feedback, and the results screen. Fix any failures, then report what passed.
+在集成浏览器中对问答游戏运行浏览器级冒烟测试。检查键盘导航、得分更新、答对和答错时的反馈，以及结果页面。修复任何失败项，然后报告通过的检查。
 ```
 
 1. 在智能体逐题测试时观察集成浏览器。

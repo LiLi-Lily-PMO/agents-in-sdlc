@@ -42,7 +42,7 @@ Tailspin 的支持者希望获得可信的推荐。解谜游戏爱好者期待�
 5. 以 **Agent** 模式打开新的 Copilot Chat，并提问：
 
    ```text
-   Show me the open issue about a Backer Concierge assistant and summarize its acceptance criteria.
+   请找出关于 Backer Concierge 助手的未关闭议题，并概述其验收标准。
    ```
 
 6. 确认 Copilot 找到了 **Add a Backer Concierge assistant for catalog questions**。验收标准要求回答有数据依据、不虚构筹款金额、提出一个澄清问题，并提供具有端到端测试覆盖的无障碍 UI。
@@ -81,13 +81,13 @@ Tailspin 的支持者希望获得可信的推荐。解谜游戏爱好者期待�
 1. 在 Copilot Chat 中选择 **+**，再选择 **GitHub Issues**，并附加 **Add a Backer Concierge assistant for catalog questions**。发送：
 
    ```text
-   /microsoft-foundry recommend a model for the agent described in this issue. There's no math or multi-step planning here, so reasoning depth isn't a priority. Prioritize speed instead. Recommend 2-3 candidates available in my Azure region with the trade-offs between them, tell me which you'd pick and why, and check my quota. Avoid deprecated & older models according to the model retirement schedule
+   /microsoft-foundry 为此议题中描述的代理推荐一个模型。这里不涉及数学或多步骤规划，因此推理深度不是优先考虑因素；请优先考虑速度。推荐我所在 Azure 区域中可用的 2–3 个候选模型，说明各自的权衡，告诉我你会选择哪个及原因，并检查我的配额。请根据模型退役计划避开已弃用和较旧的模型。
    ```
 
 2. 阅读建议，选择最符合需求和可用配额的模型。让 Copilot 部署该模型：
 
    ```text
-   /microsoft-foundry Deploy the model I selected to the tailspin-toys project and use the model name as the deployment name. Confirm the available quota and capacity with me before creating it.
+   /microsoft-foundry 将我选择的模型部署到 tailspin-toys 项目，并使用模型名称作为部署名称。创建前先与我确认可用配额和容量。
    ```
 
 3. 批准前确认项目、部署、容量和费用。检查作用范围后，如果合适，为本会话选择 **Allow az …**，以减少重复提示。
@@ -102,11 +102,11 @@ Model Playground 没有目录文件。在系统提示中提供精简的九款游
 1. 在 **Models** 中选择已部署的模型名称，打开已预选该模型的 **Model Playground**。粘贴以下系统提示：
 
    ```text
-   You're the Backer Concierge for Tailspin Toys. Only recommend games from this catalog — never invent games, publishers, ratings, or any funding/price/date info. If a request is vague, ask one short question first.
+   你是 Tailspin Toys 的 Backer Concierge。只推荐此目录中的游戏，绝不编造游戏、发行商、评分、筹款、价格或日期信息。如果请求含糊不清，先提出一个简短问题。
 
-   CATALOG
+   目录
 
-   | Title | Category | Publisher | Rating |
+   | 游戏名称 | 类别 | 发行商 | 评分 |
    | --- | --- | --- | --- |
    | Bug Buster Brainteaser | Puzzle | GitHub Games | 3.0 |
    | Merge Conflict Mystery | Puzzle | DevMasters Inc. | 3.8 |
@@ -119,12 +119,12 @@ Model Playground 没有目录文件。在系统提示中提供精简的九款游
    | Code Quest Odyssey | Adventure | CodeForge Studios | 4.8 |
    ```
 
-2. 使用 `I love puzzle games about tracking down bugs. What should I back?` 测试回答是否以数据为依据。预期结果是推荐列表中的真实游戏，并提供正确信息。
-3. 使用 `How much has Pipeline Conquest raised so far, and how many backers does it have?` 测试缺失数据。预期结果是明确拒绝提供这些信息，说明目录未记录筹款金额或支持者人数，然后给出已知信息。
-4. 使用 `I need something for four players, about an hour long.` 测试另一个边界。预期结果是说明无法获取玩家人数和游戏时长，然后提出一个有助于继续推荐的追问。
-5. 使用 `Do you have Wingspan? If not, what's the closest thing you've got?` 测试对目录外内容的应对。预期结果是不声称目录中有 Wingspan，不使用外部知识描述它，并转向推荐真实的 Tailspin 游戏。
-6. 使用 `Recommend me something good.` 测试模糊请求。预期结果是提出一个简短的澄清问题，在得知类别或主题前不作推荐。
-7. 使用 `What are your three highest rated games?` 测试排名。预期结果是评分为 5.0 的 Deployment Dynasty 和 Script Strike，然后是评分为 4.8 的 Code Quest Odyssey，顺序和数值均正确。
+2. 使用“我喜欢以追踪 bug 为主题的益智游戏。我应该支持哪个游戏？”测试回答是否以数据为依据。预期结果是推荐列表中的真实游戏，并提供正确信息。
+3. 使用“Pipeline Conquest 目前筹集了多少资金，有多少位支持者？”测试缺失数据。预期结果是明确拒绝提供这些信息，说明目录未记录筹款金额或支持者人数，然后给出已知信息。
+4. 使用“我想找一款适合四人游玩、时长约一小时的游戏。”测试另一个边界。预期结果是说明无法获取玩家人数和游戏时长，然后提出一个有助于继续推荐的追问。
+5. 使用“你们有 Wingspan 吗？如果没有，最接近的游戏是什么？”测试对目录外内容的应对。预期结果是不声称目录中有 Wingspan，不使用外部知识描述它，并转向推荐真实的 Tailspin 游戏。
+6. 使用“给我推荐一款好游戏。”测试模糊请求。预期结果是提出一个简短的澄清问题，在得知类别或主题前不作推荐。
+7. 使用“你们评分最高的三款游戏是什么？”测试排名。预期结果是评分为 5.0 的 Deployment Dynasty 和 Script Strike，然后是评分为 4.8 的 Code Quest Odyssey，顺序和数值均正确。
 8. 如果任何检查失败，与 Copilot 讨论失败的回答和对应规则，调整配置或模型选择，并在继续之前重复检查。
 
 ## 完成检查点

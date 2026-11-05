@@ -35,11 +35,11 @@ Tailspin Toys 需要的不只是模型的一次性回答。支持者希望礼宾
 1. 在 Copilot CLI 中输入以下提示：
 
     ```text
-    Use the Microsoft Foundry Skill to scaffold a hosted Backer Concierge in this existing repository using the project and model deployment we selected. Start from the Python 3.13 Basic hosted-agent sample, use Microsoft Agent Framework with the Responses API and code deployment, and keep the agent in agent/backer-concierge. Keep one azure.yaml at the repository root with a service using host: azure.ai.agent.
+    使用 Microsoft Foundry 技能，基于我们选定的项目和模型部署，在此现有存储库中为 Backer Concierge 搭建托管代理初始框架。从 Python 3.13 Basic 托管代理示例开始，使用 Microsoft Agent Framework、Responses API 和代码部署，并将代理放在 agent/backer-concierge 中。在存储库根目录仅保留一个 azure.yaml，其中的服务使用 host: azure.ai.agent。
 
-    Ground every answer in db/catalog.json. Never invent games, publishers, ratings, funding totals, backer counts, pledge tiers, prices, player counts, play times, or release dates. Ask one short clarifying question when a request is vague and preserve conversation context. Ensure the catalog is copied into the deployable service during preparation so the deployed agent never depends on a file outside its service directory. Add focused tests for catalog loading and grounding behavior.
+    所有回答均以 db/catalog.json 为依据。绝不编造游戏、发行商、评分、筹款总额、支持者人数、支持档位、价格、玩家人数、游戏时长或发布日期。请求含糊不清时，提出一个简短的澄清问题，并保留对话上下文。确保准备期间将目录复制到可部署服务中，使已部署的代理不依赖服务目录之外的文件。添加针对目录加载和回答依据行为的测试。
 
-    Scaffold and test locally, but do not deploy the hosted agent yet. Stop and ask me to authenticate if needed.
+    搭建初始框架并在本地测试，但暂时不要部署托管代理。如有需要，请暂停并要求我进行身份验证。
     ```
 
 2. 关注会话中关于 Foundry 项目、模型部署、智能体名称或环境的问题。
@@ -79,7 +79,7 @@ Tailspin Toys 需要的不只是模型的一次性回答。支持者希望礼宾
 4. 启动服务之前，让 Copilot 运行针对性测试并检查生成的配置：
 
     ```text
-    Run the focused Backer Concierge tests. Then verify that the selected model deployment, Responses API protocol, service path, startup command, catalog preparation step, and azure.ai.agent host configuration are consistent. Fix only problems in this hosted-agent project and rerun the failed checks.
+    运行 Backer Concierge 的针对性测试。然后验证所选模型部署、Responses API 协议、服务路径、启动命令、目录准备步骤和 azure.ai.agent 主机配置是否一致。只修复此托管代理项目中的问题，并重新运行失败的检查。
     ```
 
     只有针对性测试通过后，才能继续。
@@ -102,15 +102,15 @@ Tailspin Toys 需要的不只是模型的一次性回答。支持者希望礼宾
 3. 返回第一个终端中的 Copilot CLI 并输入：
 
     ```text
-    Test the running Backer Concierge through its Responses API. Run each acceptance prompt below, preserve the response ID for the two-turn conversation test, and compare every response with the expected behavior. Show a concise pass or fail table and the evidence for any failure. Do not change code yet.
+    通过 Responses API 测试正在运行的 Backer Concierge。运行下面的每个验收提示，在两轮对话测试中保留 response ID，并将每个回答与预期行为进行比较。用简明表格列出通过或失败的检查，并为任何失败提供证据。暂时不要更改代码。
 
-    1. "I love puzzle games about tracking down bugs. What should I back?" Expected: only real catalog titles with correct details.
-    2. "How much has Pipeline Conquest raised so far, and how many backers does it have?" Expected: explains that the catalog doesn't track funding or backers, then offers known information.
-    3. "I need something for four players, about an hour long." Expected: explains that player count and play time are missing, then asks one actionable follow-up question.
-    4. "Do you have Wingspan? If not, what's the closest thing you've got?" Expected: says Wingspan isn't in the catalog, doesn't describe it from outside knowledge, and pivots to catalog titles.
-    5. "Recommend me something good." Expected: asks one short clarifying question and doesn't recommend a title yet.
-    6. "What are your three highest rated games?" Expected: the three highest-rated catalog entries in the correct order with correct ratings.
-    7. In one conversation, send "Show me two highly rated strategy games." followed by "Which of those has the higher rating?" Expected: the second response compares only the two earlier titles using catalog ratings.
+    1. “我喜欢以追踪 bug 为主题的益智游戏。我应该支持哪个游戏？”预期：只推荐目录中真实存在的游戏，并提供正确信息。
+    2. “Pipeline Conquest 目前筹集了多少资金，有多少位支持者？”预期：说明目录不记录筹款或支持者信息，然后提供已知信息。
+    3. “我想找一款适合四人游玩、时长约一小时的游戏。”预期：说明目录未提供玩家人数和游戏时长，然后提出一个可执行的后续问题。
+    4. “你们有 Wingspan 吗？如果没有，最接近的游戏是什么？”预期：说明目录中没有 Wingspan，不使用外部知识描述它，并转而推荐目录中的游戏。
+    5. “给我推荐一款好游戏。”预期：提出一个简短的澄清问题，暂时不推荐游戏。
+    6. “你们评分最高的三款游戏是什么？”预期：按正确顺序列出目录中评分最高的三款游戏，并给出正确评分。
+    7. 在同一段对话中，先发送“给我介绍两款高评分的策略游戏。”，再发送“这两款游戏中，哪一款的评分更高？”预期：第二个回答仅比较前一个回答中的两款游戏，并使用目录中的评分。
     ```
 
     ![托管智能体部署测试通过](../../../../_images/cli-8-passing-acceptance-scenarios.png)
@@ -125,7 +125,7 @@ Tailspin Toys 需要的不只是模型的一次性回答。支持者希望礼宾
 2. 返回 Copilot CLI 并输入以下提示。在批准部署之前，检查建议的资源和预估费用：
 
     ```text
-    Continue with the Microsoft Foundry Skill workflow. Review the hosted agent for deployment readiness, then deploy it to Microsoft Foundry, show the deployment status and playground link, and invoke it remotely with: "I love puzzle games about tracking down bugs. What should I back?"
+    继续使用 Microsoft Foundry 技能工作流。检查托管代理是否已准备好部署，然后将其部署到 Microsoft Foundry，向我展示部署状态和操练场链接，并使用以下内容远程调用代理：“我喜欢以追踪 bug 为主题的益智游戏。我应该支持哪个游戏？”
     ```
 
 3. 如果系统提示选择评估套件来源，请选择 **No, set it up later**（否，稍后设置）。

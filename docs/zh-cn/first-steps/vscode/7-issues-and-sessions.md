@@ -19,7 +19,7 @@ lastUpdated: 2026-09-28
 发送以下提示词：
 
 ```plaintext
-Review the space quiz and suggest three focused feature ideas. Use the GitHub tools to create a separate issue for each with a clear title, user-focused description, and acceptance criteria. Do not implement them yet.
+审查太空问答游戏，并提出三个目标明确的功能想法。使用 GitHub 工具为每个想法创建单独的议题，标题清晰、描述以用户为中心且包含验收标准。暂时不要实现这些功能。
 ```
 
 ## 实现一个议题

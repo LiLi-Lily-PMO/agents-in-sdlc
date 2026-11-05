@@ -67,7 +67,7 @@ lastUpdated: 2026-10-05
 在聊天中发送以下提示词：
 
 ```plaintext
-How does the GitHub Copilot app use worktrees?
+GitHub Copilot app 如何使用工作树？
 ```
 
 ## 总结与后续步骤

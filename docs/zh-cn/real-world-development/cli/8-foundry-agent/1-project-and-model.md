@@ -91,7 +91,7 @@ Tailspin Toys 需要一个能够区分目录事实和公司未提供信息的礼
 1. 返回 Copilot CLI 并输入：
 
     ```text
-    Install the project dependencies, seed the database, then run the existing db:export script. Show me the command output and summarize the shape and grounding limits of db/catalog.json.
+    安装项目依赖项并填充数据库，然后运行现有的 db:export 脚本。向我展示命令输出，并概述 db/catalog.json 的结构及其可作为依据的信息范围。
     ```
 
     Copilot 应执行相当于以下命令的操作：
@@ -113,7 +113,7 @@ Tailspin Toys 需要一个能够区分目录事实和公司未提供信息的礼
 1. 输入以下提示：
 
     ```text
-    /plan Use the Microsoft Foundry Skill to plan a Backer Concierge hosted agent for this existing Tailspin Toys repository. Use a public Foundry project, Python 3.13, Microsoft Agent Framework, the Responses API, the Basic sample, and code deployment. Keep the agent in agent/backer-concierge and keep one azure.yaml at the repository root. Ground every answer in db/catalog.json, preserve conversation context, and add focused tests. Include project setup, model selection, local testing, deployment, remote invocation, estimated cost-bearing resources and cleanup.
+    /plan 使用 Microsoft Foundry 技能，为此 Tailspin Toys 存储库规划一个 Backer Concierge 托管代理。使用公共 Foundry 项目、Python 3.13、Microsoft Agent Framework、Responses API、Basic 示例和代码部署。将代理放在 agent/backer-concierge 中，并在存储库根目录仅保留一个 azure.yaml。所有回答均以 db/catalog.json 为依据，保留对话上下文，并添加针对性测试。规划中应包括项目设置、模型选择、本地测试、部署、远程调用、预计产生费用的资源及清理步骤。
     ```
 
 2. 查看建议的计划。确认 Copilot 打算使用 `microsoft-foundry` 技能，并将托管智能体与现有 Astro 应用分开。如果发现任何值得关注或不符合预期的内容，请先要求修改，再继续。
@@ -126,7 +126,7 @@ Tailspin Toys 需要一个能够区分目录事实和公司未提供信息的礼
 1. 让 Copilot 创建项目。批准资源创建之前，检查所选订阅、区域、配额和预估费用：
 
     ```text
-    Use the Microsoft Foundry Skill to create a public Foundry project for this project. Use the resource group rg-tailspin-toys and project name tailspin-toys.
+    使用 Microsoft Foundry 技能为此项目创建一个公共 Foundry 项目。使用资源组 rg-tailspin-toys 和项目名称 tailspin-toys。
     ```
 
     ![创建公共 Foundry 项目](../../../../_images/cli-8-create-foundry-project.png)
@@ -134,7 +134,7 @@ Tailspin Toys 需要一个能够区分目录事实和公司未提供信息的礼
 2. 项目准备就绪后，让 Copilot 推荐模型：
 
     ```text
-    Use the Microsoft Foundry Skill to recommend two or three current chat models available in the tailspin-toys project for the Backer Concierge acceptance criteria in the issue titled "Add a Backer Concierge assistant for catalog questions". Prioritize low latency, instruction following, grounding fidelity, available quota, and models that aren't approaching retirement. There is no complex math or multi-step planning. Explain the tradeoffs and wait for me to choose a model from the recommended options.
+    使用 Microsoft Foundry 技能，根据标题为“Add a Backer Concierge assistant for catalog questions”的议题中的 Backer Concierge 验收标准，在 tailspin-toys 项目中推荐两到三个当前可用的聊天模型。优先考虑低延迟、遵循指令的能力、回答依据的准确性、可用配额，以及尚未临近退役的模型。不涉及复杂数学或多步骤规划。说明各模型的权衡，然后等待我从推荐选项中选择一个。
     ```
 
     Copilot 可能会提示从推荐选项中选择模型。
@@ -146,7 +146,7 @@ Tailspin Toys 需要一个能够区分目录事实和公司未提供信息的礼
 3. 从推荐选项中选择模型，然后让 Copilot 部署所选模型。在批准部署之前，检查容量和费用：
 
     ```text
-    Deploy the model we selected to the tailspin-toys Foundry project and use the model name as the deployment name. Choose an SKU with available quota, ask me to confirm the capacity before deployment. After deployment, show me the deployment status.
+    将我们选定的模型部署到 tailspin-toys Foundry 项目，并使用模型名称作为部署名称。选择具有可用配额的 SKU，部署前请我确认容量。部署后向我展示部署状态。
     ```
 
     ![部署所选模型](../../../../_images/cli-8-deploy-foundry-model.png)
@@ -195,7 +195,7 @@ Tailspin Toys 需要一个能够区分目录事实和公司未提供信息的礼
 4. 返回 Copilot CLI 并输入：
 
     ```text
-    Use the Microsoft Foundry Skill to test my deployed model directly in the tailspin-toys project without creating an agent. Ground it with content from @db/catalog.json and ask: "I love puzzle games about tracking down bugs. What should I back, and how much funding has it raised?" Show me the response and useful metadata like tokens used and response time (only if you can obtain it). Do not change files or create resources.
+    使用 Microsoft Foundry 技能，在不创建代理的情况下直接测试我在 tailspin-toys 项目中部署的模型。使用 @db/catalog.json 中的内容作为依据，并提问：“我喜欢以追踪 bug 为主题的益智游戏。我应该支持哪个游戏，它筹集了多少资金？”向我展示回答以及有用的元数据，例如已用 token 数和响应时间（仅在可以获取时显示）。不要更改文件或创建资源。
     ```
 
     ![Foundry 模型的回答推荐目录中真实存在的游戏，并指出没有筹款数据](../../../../_images/cli-8-foundry-agent-response.png)

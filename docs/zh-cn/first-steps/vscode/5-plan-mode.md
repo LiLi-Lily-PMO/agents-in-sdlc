@@ -21,7 +21,7 @@ Plan 模式会调查工作区并编写实现计划，而不改动文件。
 3. 用以下提示词描述下一个功能，让 Copilot 调查工作区：
 
    ```plaintext
-   Plan how to add a review screen that shows every question with the answer I chose. Investigate the existing quiz, list the changes you would make, call out accessibility and single-file risks, and stop before editing.
+   规划如何添加一个回顾页面，显示每道题以及我选择的答案。检查现有问答游戏，列出你会进行的更改，指出无障碍访问和单文件方面的风险，并在编辑前停止。
    ```
 
 4. 阅读计划并要求调整，然后切回 **Agent** 来实现。

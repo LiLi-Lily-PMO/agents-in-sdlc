@@ -25,7 +25,7 @@ lastUpdated: 2026-09-28
 3. 输入以下提示词：
 
    ```plaintext
-   Review the latest GitHub issues created and still open in the last week, and provide a summary table ranked by severity and priority.
+   查看过去一周创建且仍处于打开状态的最新 GitHub 议题，并提供一个按严重性和优先级排序的摘要表。
    ```
 
 4. 将会话模式设为 **Autopilot**。

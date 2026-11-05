@@ -53,7 +53,7 @@ lastUpdated: 2026-07-09
 1. 使用以下提示词，要求 Copilot 验证新功能：
 
     ```plaintext
-    Start the app and use Playwright MCP to check filtering against the issue and our plan. Tell me what works and what doesn't, without making changes. Stop the server you started when you're done.
+    启动应用，并使用 Playwright MCP 对照议题和我们的计划检查筛选功能。告诉我哪些正常、哪些不正常，不要进行任何更改。完成后停止你启动的服务器。
     ```
 
   > [!NOTE]

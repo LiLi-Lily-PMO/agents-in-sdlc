@@ -20,7 +20,7 @@ lastUpdated: 2026-09-28
 在 `space-quiz` 会话中发送以下提示词：
 
 ```plaintext
-Create a space exploration quiz with 10 questions, a progress bar, score counter, and colorful animated feedback (green for correct, red shake for wrong). Show a results screen with emoji reaction at the end. Center in a narrow column. Single index.html, no server/dependencies. Polished, sans-serif, 14–16px body, prefers-color-scheme. Open in the integrated browser.
+创建一个包含 10 道题的太空探索问答游戏，添加进度条、得分计数器和色彩鲜明的动画反馈（答对时为绿色，答错时红色抖动）。结束时显示带表情符号反馈的结果页面。内容在窄列中居中。只使用单个 index.html，不需要服务器或依赖项。采用精致的无衬线设计，正文为 14–16px，并遵循 prefers-color-scheme。在集成浏览器中打开。
 ```
 
 智能体完成后，尝试回答几道题，并确认：
@@ -42,7 +42,7 @@ Create a space exploration quiz with 10 questions, a progress bar, score counter
 3. 发送以下提示词：
 
    ```plaintext
-   Make the selected element feel more like a mission-control display. Keep it accessible and preserve the existing light and dark themes.
+   让选中的元素更有任务控制台显示屏的感觉。保持无障碍，并保留现有的浅色和深色主题。
    ```
 
 4. 观察集成浏览器刷新，并验证更改。

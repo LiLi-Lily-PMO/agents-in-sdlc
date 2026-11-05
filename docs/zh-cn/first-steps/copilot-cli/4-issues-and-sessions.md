@@ -20,7 +20,7 @@ lastUpdated: 2026-09-28
 发送以下提示词：
 
 ```plaintext
-Review the space quiz and create three focused GitHub issues with clear titles, user-focused descriptions, and acceptance criteria. Do not implement them yet.
+审查太空问答游戏，并创建三个目标明确的 GitHub 议题，标题清晰、描述以用户为中心且包含验收标准。暂时不要实现这些功能。
 ```
 
 ## 在当前会话中处理第一个议题

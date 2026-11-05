@@ -46,7 +46,7 @@ Tailspin Toys 的支持者可以按类别和发行商筛选游戏，但*哪些�
 8. 在这个关联议题的工作树会话中，将提示框内默认的 `/fix-issue` 提示词替换为：
 
    ```plaintext
-   Install the project dependencies, seed the database, then run the existing db:export script. Show me the command output and summarize the shape and grounding limits of db/catalog.json.
+   安装项目依赖项并填充数据库，然后运行现有的 db:export 脚本。向我展示命令输出，并概述 db/catalog.json 的结构及其可作为依据的信息范围。
    ```
 
 9. 查看命令输出。Copilot 应运行与以下内容等效的命令：
@@ -92,7 +92,7 @@ Tailspin Toys 的支持者可以按类别和发行商筛选游戏，但*哪些�
 13. 在同一个议题会话中输入：
 
     ```plaintext
-    Use the Microsoft Foundry skill to create a resource group named rg-tailspin-toys and a Foundry project named tailspin-toys.
+    使用 Microsoft Foundry 技能创建名为 rg-tailspin-toys 的资源组和名为 tailspin-toys 的 Foundry 项目。
     ```
 
     ![创建 Foundry 项目](../../../../_images/app-8-foundry-project-created.png)
@@ -100,7 +100,7 @@ Tailspin Toys 的支持者可以按类别和发行商筛选游戏，但*哪些�
 14. 要求 Copilot 推荐模型。由于会话从议题启动，议题的验收标准已包含在上下文中：
 
     ```plaintext
-    Use the Microsoft Foundry skill to recommend two or three current chat models in the tailspin-toys project that meet this issue's acceptance criteria. Explain the tradeoffs and wait for me to choose.
+    使用 Microsoft Foundry 技能，在 tailspin-toys 项目中推荐两到三个当前可用且符合此议题验收标准的聊天模型。说明各自的权衡，并等待我选择。
     ```
 
 15. 确认 Copilot 加载了 `microsoft-foundry` 技能，然后根据各模型的优缺点选择一个可用模型。Microsoft Foundry 托管代理快速入门目前使用 `gpt-5.4-mini`，但可用性和配额因区域而异。
@@ -110,7 +110,7 @@ Tailspin Toys 的支持者可以按类别和发行商筛选游戏，但*哪些�
 16. 要求 Copilot 部署所选模型，并在批准前审查目标项目和费用：
 
     ```plaintext
-    Deploy the model I selected to the tailspin-toys Foundry project, using the model name as the deployment name.
+    将我选择的模型部署到 tailspin-toys Foundry 项目，并使用模型名称作为部署名称。
     ```
 
 > [!TIP]

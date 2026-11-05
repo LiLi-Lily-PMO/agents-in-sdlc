@@ -22,7 +22,7 @@ lastUpdated: 2026-10-05
 运行 `/delegate`，委派以下任务：
 
 ```plaintext
-Delegate this: add a shareable mission report to the space quiz. At the end of a run, generate a compact summary card with the score, a rank title based on the percentage, and the slowest question. Add a Copy result button that puts a short plain-text version on the clipboard. Keep it in the single index.html with no dependencies, keep it keyboard accessible, and report back with what changed.
+将此任务委托出去：为太空问答游戏添加可分享的任务报告。每轮结束时，生成一张简洁的摘要卡，包含得分、根据得分百分比确定的等级称号，以及用时最长的题目。添加“复制结果”按钮，将简短的纯文本版本复制到剪贴板。所有内容都保留在单个 index.html 中，不添加依赖项，确保支持键盘操作，并报告更改内容。
 ```
 
 1. 在委派任务运行时，继续在主会话中工作。

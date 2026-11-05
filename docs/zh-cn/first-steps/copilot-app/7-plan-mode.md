@@ -21,7 +21,7 @@ lastUpdated: 2026-10-05
 3. 发送以下提示词，让智能体在不更改文件的情况下调查：
 
    ```plaintext
-   Plan how to implement this issue. Investigate the existing quiz, list the files you would change, call out risks to accessibility and the single-file constraint, and stop before making any edits.
+   规划如何实现此议题。检查现有问答游戏，列出你会更改的文件，指出无障碍访问和单文件限制方面的风险，并在进行任何编辑前停止。
    ```
 
 4. 阅读提出的计划，如果有遗漏，要求调整。

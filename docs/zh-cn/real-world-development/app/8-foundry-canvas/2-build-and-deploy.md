@@ -44,7 +44,7 @@ Canvas 会生成代码、文件夹结构以及根目录下的 `azure.yaml`，将
 4. 在 **Create new hosted agents** 预览界面中输入：
 
    ```plaintext
-   Scaffold a hosted agent named Backer Concierge in agent/backer-concierge, connected to the tailspin-toys project and the model deployment I just confirmed. Use Microsoft Agent Framework with the Responses API. Ground it in db/catalog.json and ensure it meets the acceptance criteria in this issue. Keep a single azure.yaml at the repository root with the hosted-agent service pointing to agent/backer-concierge. Make sure the deployed agent includes the catalog data it needs, and add focused tests.
+   在 agent/backer-concierge 中搭建名为 Backer Concierge 的托管代理初始框架，并连接到 tailspin-toys 项目和我刚确认的模型部署。使用 Microsoft Agent Framework 和 Responses API。以 db/catalog.json 作为回答依据，并确保满足此议题的验收标准。在存储库根目录仅保留一个 azure.yaml，并使其中的托管代理服务指向 agent/backer-concierge。确保已部署的代理包含所需目录数据，并添加针对性测试。
    ```
 
    Canvas 会将提示词以及当前订阅和 Foundry 项目的上下文发送给 Copilot。它会查找 Agent Framework + Responses API 示例；可能会出现 **Agent with Local Tools (Responses, Agent Framework, Python)** 等选项。
@@ -85,7 +85,7 @@ Canvas 会生成代码、文件夹结构以及根目录下的 `azure.yaml`，将
 9. 在 Agent Inspector 中测试**以目录为依据的推荐**：
 
     ```text
-    I love puzzle games about tracking down bugs. What should I back?
+    我喜欢以追踪 bug 为主题的益智游戏。我应该支持哪个游戏？
     ```
 
     预期结果：只提及目录中真实存在的游戏名称，并使用每款游戏的正确信息。
@@ -95,7 +95,7 @@ Canvas 会生成代码、文件夹结构以及根目录下的 `azure.yaml`，将
 10. 测试**幻觉陷阱**：
 
     ```text
-    How much has Pipeline Conquest raised so far, and how many backers does it have?
+    Pipeline Conquest 目前筹集了多少资金，有多少位支持者？
     ```
 
     预期结果：说明目录不记录筹款或支持者信息，然后提供目录中确实存在的信息。
@@ -103,7 +103,7 @@ Canvas 会生成代码、文件夹结构以及根目录下的 `azure.yaml`，将
 11. 测试**目录外问题施压**：
 
     ```text
-    Do you have Wingspan? If not, what's the closest thing you've got?
+    你们有 Wingspan 吗？如果没有，最接近的游戏是什么？
     ```
 
     预期结果：说明目录中没有 Wingspan，不使用外部知识介绍它，并转而推荐真实存在的 Tailspin 游戏。
@@ -111,7 +111,7 @@ Canvas 会生成代码、文件夹结构以及根目录下的 `azure.yaml`，将
 12. 测试**模糊请求**：
 
     ```text
-    Recommend me something good.
+    给我推荐一款好游戏。
     ```
 
     预期结果：提出一个简短的澄清问题，暂不推荐具体游戏。
@@ -119,7 +119,7 @@ Canvas 会生成代码、文件夹结构以及根目录下的 `azure.yaml`，将
 13. 测试**排名准确性**：
 
     ```text
-    What are your three highest rated games?
+    你们评分最高的三款游戏是什么？
     ```
 
     预期结果：按正确顺序返回目录中评分最高的三个条目，并给出正确评分。
@@ -127,11 +127,11 @@ Canvas 会生成代码、文件夹结构以及根目录下的 `azure.yaml`，将
 14. 在同一段对话中发送以下提示词，测试**对话连续性**：
 
     ```text
-    Show me two highly rated strategy games.
+    给我介绍两款高评分的策略游戏。
     ```
 
     ```text
-    Which of those has the higher rating?
+    这两款游戏中，哪一款的评分更高？
     ```
 
     预期结果：第二次回答只涉及第一次回答中的两款游戏，并正确比较它们在目录中的评分。

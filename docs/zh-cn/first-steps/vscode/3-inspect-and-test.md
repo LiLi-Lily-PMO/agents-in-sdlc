@@ -27,7 +27,7 @@ VS Code 在 Copilot Chat 输入框的右下角显示当前上下文。
 初始化存储库或提交任何内容之前，使用集成浏览器和冒烟测试提示词：
 
 ```plaintext
-Run a browser-level smoke test for the quiz. Check keyboard navigation, score updates, correct and incorrect feedback, and the results screen. Fix any failures, then report what passed.
+对问答游戏运行浏览器级冒烟测试。检查键盘导航、得分更新、答对和答错时的反馈，以及结果页面。修复任何失败项，然后报告通过的检查。
 ```
 
 1. 运行冒烟测试，并检查集成浏览器。

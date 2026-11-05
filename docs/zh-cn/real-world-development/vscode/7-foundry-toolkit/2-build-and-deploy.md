@@ -57,7 +57,7 @@ lastUpdated: 2026-09-16
 2. 在新聊天中，确认已切换为 **AIAgentExpert**。将生成的提示替换为以下定制提示并提交：
 
    ```text
-   /foundrytk-quick-start Create a backer concierge AI agent called 'Backer Concierge'. The agent should use the model I deployed to answer catalog questions and recommend games grounded strictly in db/catalog.json. Review the acceptance criteria in the issue titled 'Add a Backer Concierge assistant for catalog questions' and ensure the agent meets them. Generate the code into agent/backer-concierge in the current workspace and ask me if anything is unclear.
+   /foundrytk-quick-start 创建名为“Backer Concierge”的支持者咨询 AI 代理。代理应使用我已部署的模型回答目录问题，并严格依据 db/catalog.json 推荐游戏。查看标题为“Add a Backer Concierge assistant for catalog questions”的议题中的验收标准，并确保代理满足这些标准。在当前工作区的 agent/backer-concierge 中生成代码；如有任何不清楚之处，请先询问我。
    ```
 
 3. 审阅 `agent/backer-concierge` 下生成的代码。确认可部署的代理中包含目录、针对性测试通过，且不会提交凭据或本地环境文件。
@@ -74,7 +74,7 @@ lastUpdated: 2026-09-16
 1. 在创建代理的 Copilot Chat 中选择 **Go production**，将默认提示替换为以下内容并提交：
 
    ```text
-   /foundrytk-quick-start Review this agent for deployment readiness, run its tests, then deploy it to my existing tailspin-toys Foundry project. Show me the deployment status and test the deployed agent.
+   /foundrytk-quick-start 检查此代理是否已准备好部署，运行其测试，然后将其部署到我现有的 tailspin-toys Foundry 项目。向我展示部署状态，并测试已部署的代理。
    ```
 
    ![AIAgentExpert 代理提供的交接选项截图。](../../../../_images/vscode-go-production-handoff.png)

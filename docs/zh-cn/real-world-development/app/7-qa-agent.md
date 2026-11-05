@@ -32,9 +32,9 @@ lastUpdated: 2026-09-17
 2. 向 Copilot 发送以下提示词，创建新的自定义智能体：
 
   ```plaintext
-  Create a custom agent named QA in .github/agents/qa.agent.md. It should check features against their issues and agreed requirements, follow the repository instructions, run the quality-checks skill, use Playwright MCP to verify behavior, and add tests when coverage is missing.
+  在 .github/agents/qa.agent.md 中创建名为 QA 的自定义智能体。它应根据议题和商定的需求检查功能，遵循存储库指令，运行 quality-checks 技能，使用 Playwright MCP 验证行为，并在测试覆盖不足时添加测试。
 
-  Have it report each requirement as pass, fail, or blocked with supporting evidence. It must ask before changing implementation code, and it must not commit changes or open pull requests. Use the current model and available tools. Just create the profile for now so I can review it.
+  要求它将每项需求报告为通过、失败或受阻，并提供支持证据。修改实现代码前必须征求同意，且不得提交更改或创建拉取请求。使用当前模型和可用工具。现在只创建配置文件，以便我审查。
   ```
 
 ## 检查配置文件
@@ -54,7 +54,7 @@ lastUpdated: 2026-09-17
 3. 发送以下提示词，让 QA 审查功能：
 
     ```plaintext
-    Review the filtering feature against the issue and the decisions in our plan. Is it ready for a PR?
+    请根据议题和计划中的决定审查筛选功能。它是否已准备好创建 PR？
     ```
 
 4. 确认 QA 使用了正确的议题和规划决策。如果它提出请求，请提供议题 URL 或缺少的上下文。

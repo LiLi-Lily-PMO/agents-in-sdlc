@@ -38,9 +38,9 @@ Tailspin Toys 采用完全预渲染方式。浏览器代码绝不能直接调用
 1. 在 Copilot CLI 中输入：
 
     ```text
-    Use the Azure skills to add an Azure Functions v4 Node.js and TypeScript project in api with one POST /api/concierge endpoint that invokes my deployed Backer Concierge hosted agent. This Function will run locally only; don't add it to azure.yaml or create Azure deployment infrastructure. Use DefaultAzureCredential with my local Azure sign-in. Keep the HTTP trigger thin, isolate the Foundry client in a unit-testable module, validate and limit request bodies, set explicit timeouts, and return sanitized errors. Store the Foundry project endpoint and agent name in local server-side settings that are excluded from version control. Never return credentials or access tokens to the browser. The Astro site is `output: 'static'` with no dev proxy, so also add a local-only Vite dev-server proxy for /api to the Function's port in astro.config.mjs, so relative /api/concierge requests reach it during `astro dev`.
+    使用 Azure 技能在 api 中添加 Azure Functions v4 Node.js 和 TypeScript 项目，并设置一个 POST /api/concierge 端点以调用我已部署的 Backer Concierge 托管代理。此 Function 仅在本地运行；不要将其加入 azure.yaml，也不要创建 Azure 部署基础设施。使用我通过本地 Azure 登录身份获取的 DefaultAzureCredential。保持 HTTP 触发器逻辑精简，将 Foundry 客户端隔离在可进行单元测试的模块中，验证并限制请求正文，设置明确的超时时间，并返回经过清理的错误。将 Foundry 项目端点和代理名称存储在不纳入版本控制的本地服务器端设置中。绝不要向浏览器返回凭据或访问令牌。Astro 网站的 `output: 'static'` 且没有开发代理，因此还要在 astro.config.mjs 中添加仅限本地的 Vite 开发服务器代理，将 /api 请求转发到 Function 的端口，使相对路径 /api/concierge 请求可在 `astro dev` 期间到达 Function。
 
-    For conversation state, generate a high-entropy handle on the server, map it to the Foundry conversation server-side with an expiration, and never expose a raw Foundry conversation or thread identifier. Reject malformed, expired, and unknown handles. Add focused unit tests.
+    对于对话状态，在服务器上生成高熵句柄，在服务器端将其映射到 Foundry 对话并设置过期时间，绝不暴露原始 Foundry 对话或线程标识符。拒绝格式错误、已过期和未知的句柄。添加针对性单元测试。
     ```
 
     ![Azure Functions 本地代理设置](../../../../_images/cli-8-azure-functions-proxy.png)
@@ -49,7 +49,7 @@ Tailspin Toys 采用完全预渲染方式。浏览器代码绝不能直接调用
 3. 返回 Copilot CLI，让 Copilot 测试本地代理：
 
     ```text
-    Send a request to the local /api/concierge endpoint asking "Which games are under $30?" and show me the sanitized JSON response. Confirm that the request reaches the deployed Backer Concierge through DefaultAzureCredential.
+    向本地 /api/concierge 端点发送请求，询问“哪些游戏价格低于 30 美元？”，并向我展示经过清理的 JSON 响应。确认请求通过 DefaultAzureCredential 到达已部署的 Backer Concierge。
     ```
 
 4. 查看响应。它应说明目录不包含价格。响应中不得包含 Foundry 令牌、凭据、项目终结点、原始 Foundry 对话标识符或堆栈跟踪。
@@ -63,14 +63,14 @@ Tailspin Toys 采用完全预渲染方式。浏览器代码绝不能直接调用
 1. 让 Copilot 创建网站集成：
 
     ```text
-    Add an accessible Backer Concierge chat widget as an Astro component and render it site-wide from Layout.astro. It should POST to /api/concierge and thread the conversation using the returned opaque conversation handle, follow the dark theme in style.instructions.md, support Escape to close, and include data-testid attributes.
+    将无障碍的 Backer Concierge 聊天组件添加为 Astro 组件，并通过 Layout.astro 在整个网站中渲染。该组件应向 /api/concierge 发送 POST 请求，使用返回的不透明对话句柄维持对话，遵循 style.instructions.md 中的深色主题，支持按 Escape 关闭，并包含 data-testid 属性。
     ```
 
 2. 保持本地 Function 运行，并在另一个终端中使用 Copilot 提供的命令启动 Astro 网站。
 3. 返回 Copilot CLI。在[练习 4][playwright-lesson]中添加的 Playwright MCP 服务器已可用。让 Copilot 测试组件：
 
     ```text
-    Use the Playwright MCP server to test the Backer Concierge widget end to end in the running Tailspin Toys site. Verify its core chat flow, conversation continuity, accessibility, error handling, grounding boundaries, and secure use of the local proxy. Report the results and include evidence for any failures.
+    使用 Playwright MCP 服务器，在正在运行的 Tailspin Toys 网站中对 Backer Concierge 组件进行端到端测试。验证核心聊天流程、对话连续性、无障碍访问、错误处理、依据边界，以及本地代理的安全使用情况。报告结果，并为任何失败提供证据。
     ```
 
     ![Tailspin Toys 网站中的 Backer Concierge 聊天组件截图](../../../../_images/cli-8-backer-concierge-widget.png)

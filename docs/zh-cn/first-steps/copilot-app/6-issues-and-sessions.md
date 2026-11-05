@@ -20,7 +20,7 @@ lastUpdated: 2026-10-05
 发送以下提示词：
 
 ```plaintext
-Review the space quiz and suggest three focused feature ideas that could each be completed in a short session. Create a separate GitHub issue for each idea with a clear title, user-focused description, and acceptance criteria. Do not implement them yet.
+审查太空问答游戏，并提出三个目标明确、可在短时间内分别完成的功能想法。为每个想法创建一个单独的 GitHub 议题，标题清晰、描述以用户为中心且包含验收标准。暂时不要实现这些功能。
 ```
 
 打开 **Issues**，审查这三个议题，选择一个价值明确且范围可控的议题。
@@ -38,7 +38,7 @@ Review the space quiz and suggest three focused feature ideas that could each be
 5. 发送以下提示词：
 
    ```plaintext
-   Implement this issue completely. Keep the single-file, dependency-free design, test the behavior in the integrated browser, and summarize the changes when finished.
+   完整实现此议题。保持单文件、无依赖的设计，在集成浏览器中测试行为，并在完成后总结更改。
    ```
 
 新工作树将功能与默认分支隔离，直到准备好审查和合并。

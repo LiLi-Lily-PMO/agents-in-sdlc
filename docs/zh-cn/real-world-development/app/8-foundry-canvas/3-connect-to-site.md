@@ -41,7 +41,7 @@ Tailspin Toys 完全采用预渲染。浏览器代码绝不能直接调用托管
 3. 在同一个 Copilot 会话中输入：
 
    ```plaintext
-   Add a local Azure Functions proxy in api for the static Astro site to call my deployed Backer Concierge during development. Use my existing local Azure sign-in, keep credentials and Foundry conversation identifiers out of the browser, return an opaque conversation handle, validate requests, sanitize errors, and add focused tests. Configure the Astro development server so /api requests reach the local Function. Don't create public deployment infrastructure.
+   在 api 中为静态 Astro 网站添加本地 Azure Functions 代理，以便开发期间调用我已部署的 Backer Concierge。使用我现有的本地 Azure 登录身份，确保凭据和 Foundry 对话标识符不会暴露给浏览器，返回不透明的对话句柄，验证请求、清理错误信息，并添加针对性测试。配置 Astro 开发服务器，使 /api 请求转发到本地 Function。不要创建面向公众的部署基础设施。
    ```
 
 4. 审查生成的代理服务及针对性测试，检查请求验证、错误信息脱敏、不透明对话句柄和仅限服务器端的凭据边界。要求 Copilot 运行针对性测试并修复所有失败项。
@@ -49,7 +49,7 @@ Tailspin Toys 完全采用预渲染。浏览器代码绝不能直接调用托管
 6. 返回聊天，要求 Copilot 测试本地代理服务：
 
    ```plaintext
-   Test the local /api/concierge endpoint by asking "Which games are under $30?" Show me the sanitized response and confirm that no credentials or internal conversation identifiers are returned.
+   通过询问“哪些游戏价格低于 30 美元？”来测试本地 /api/concierge 端点。向我展示经过清理的响应，并确认不会返回凭据或内部对话标识符。
    ```
 
 7. 检查响应：它应说明目录不包含价格。确认其中没有 Foundry 令牌、凭据、内部对话标识符、项目端点或堆栈跟踪。如果无法访问 Function，或响应泄露了详情或编造了价格，请将脱敏后的失败信息发送给 Copilot，修复问题，并在继续前重新运行代理服务测试。
@@ -63,14 +63,14 @@ Tailspin Toys 完全采用预渲染。浏览器代码绝不能直接调用托管
 8. 要求 Copilot 创建网站集成：
 
    ```plaintext
-   Add an accessible Backer Concierge chat widget to the Astro site. Connect it to /api/concierge, preserve the conversation using the returned opaque handle, follow the existing design guidance, support keyboard use, keep Foundry details out of the browser, and add end-to-end tests covering the chat flow, conversation continuity, accessibility, error handling, and grounding boundaries.
+   在 Astro 网站中添加无障碍的 Backer Concierge 聊天组件。将其连接到 /api/concierge，使用返回的不透明句柄保留对话，遵循现有设计指导，支持键盘操作，避免在浏览器中暴露 Foundry 详情，并添加端到端测试，覆盖聊天流程、对话连续性、无障碍访问、错误处理和依据边界。
    ```
 
 9. 在另一个终端中使用 Copilot 提供的命令启动 Astro 开发服务器。保持网站和本地 Function 同时运行。
 10. 要求 Copilot 运行端到端测试：
 
     ```plaintext
-    Run the end-to-end tests for the Backer Concierge widget in the Tailspin Toys site. Verify its core chat flow, conversation continuity, accessibility, error handling, grounding boundaries, and secure use of the local proxy. Report the results and include evidence for any failures.
+    运行 Tailspin Toys 网站中 Backer Concierge 组件的端到端测试。验证其核心聊天流程、对话连续性、无障碍访问、错误处理、依据边界，以及本地代理的安全使用情况。报告测试结果，并为任何失败提供证据。
     ```
 
 11. 审查报告，并在浏览器中验证报告所描述的行为，包括键盘操作以及[托管代理验收检查][agent-checks]中的两轮对话。确认浏览器请求携带不透明句柄，通过 `/api/concierge` 发送，而不是直接发送到 Foundry；响应也不暴露凭据或 Foundry 内部标识符。检查推荐和信息缺失时的回答是否保持在目录范围内。与 Copilot 一起解决失败的测试，必要时重启受影响的本地服务，然后重新运行测试。

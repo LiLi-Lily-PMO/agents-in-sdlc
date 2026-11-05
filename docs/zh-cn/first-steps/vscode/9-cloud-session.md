@@ -27,7 +27,7 @@ lastUpdated: 2026-10-05
 2. 启动新会话，提供一个可独立完成、验收标准明确的功能：
 
    ```plaintext
-   Add a theme picker to the space quiz with three named themes: Deep Space, Launch Pad, and Lunar. Persist the choice in localStorage, keep everything in the single index.html with no dependencies, keep contrast accessible in every theme, and open a pull request when the tests pass.
+   为太空问答游戏添加主题选择器，提供三个命名主题：深空、发射台和月球。使用 localStorage 保存选择，所有内容仍放在单个 index.html 中且不添加依赖项，确保每种主题都具有无障碍的对比度，并在测试通过后创建拉取请求。
    ```
 
 3. 合上笔记本电脑。工作会继续在 GitHub 上运行，并以拉取请求交付。

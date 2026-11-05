@@ -19,7 +19,7 @@ lastUpdated: 2026-09-28
 在 Copilot CLI 会话中发送以下提示词：
 
 ```plaintext
-Create a space exploration quiz with 10 questions, a progress bar, score counter, and colorful animated feedback (green for correct, red shake for wrong). Show a results screen with an emoji reaction at the end. Single index.html, no server or dependencies. Accessible, keyboard-navigable, and respects prefers-color-scheme.
+创建一个包含 10 道题的太空探索问答游戏，添加进度条、得分计数器和色彩鲜明的动画反馈（答对时为绿色，答错时红色抖动）。结束时显示带有表情符号反馈的结果页面。只使用单个 index.html，不需要服务器或依赖项。确保无障碍、支持键盘导航，并遵循 prefers-color-scheme。
 ```
 
 1. 阅读提出的计划，并批准文件更改。
@@ -30,7 +30,7 @@ Create a space exploration quiz with 10 questions, a progress bar, score counter
 提出一项范围明确的优化，观察限定范围的请求会带来怎样的结果：
 
 ```plaintext
-The results screen feels flat. Give it a stronger sense of arrival: animate the score counting up and make the emoji reaction larger. Change nothing else.
+结果页面显得平淡。请增强它的呈现效果：为得分递增添加动画，并放大表情符号反馈。不要更改其他内容。
 ```
 
 1. 在浏览器中重新加载页面，并答题直到结束。

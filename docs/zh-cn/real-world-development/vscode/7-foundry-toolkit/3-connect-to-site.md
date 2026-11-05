@@ -39,14 +39,14 @@ next: false
 1. 让 Copilot 创建代理服务：
 
    ```text
-   Add a local Azure Functions proxy in api for the static Astro site to call my deployed Backer Concierge securely during development. Use my existing local Azure sign-in to call the hosted agent, keep all credentials out of the browser, protect conversation state with opaque handles, validate requests, sanitize errors, add focused tests, and configure the Astro dev server so /api requests reach the local Function. Don't create public deployment infrastructure.
+   在 api 中为静态 Astro 网站添加本地 Azure Functions 代理，以便开发期间安全地调用我已部署的 Backer Concierge。使用我现有的本地 Azure 登录身份调用托管代理，确保所有凭据不会暴露给浏览器，使用不透明句柄保护对话状态，验证请求、清理错误信息、添加针对性测试，并配置 Astro 开发服务器，使 /api 请求转发到本地 Function。不要创建面向公众的部署基础设施。
    ```
 
 2. 接受更改前先审阅。确认凭据和 Foundry 对话标识符始终保留在服务器端、本地设置已排除在版本控制之外、请求设有边界限制，且针对性测试通过。
 3. 构建 UI 前，先证明后端可以正常工作：
 
    ```text
-   Start the local Functions host and test /api/concierge by asking "Which games are under $30?" Show me the sanitized response and confirm that no credentials or internal conversation identifiers are returned.
+   启动本地 Functions 主机，并通过询问“哪些游戏价格低于 30 美元？”来测试 /api/concierge。向我展示经过清理的响应，并确认不会返回凭据或内部对话标识符。
    ```
 
 4. 检查终端响应。预期结果是有效的 JSON，其中 `response` 属性包含回答，且不包含虚构的价格信息、凭据或内部对话标识符。如果检查失败，让 Copilot 修复，然后重复后端测试。
@@ -59,7 +59,7 @@ UI 现在有了经过验证的后端。端到端测试将同时检查可用性�
 1. 让 Copilot 添加小组件：
 
    ```text
-   Add an accessible Backer Concierge chat widget to the Astro site. Connect it to /api/concierge, preserve the conversation using the returned opaque handle, follow the existing design guidance, support keyboard use, and make it testable.
+   在 Astro 网站中添加无障碍的 Backer Concierge 聊天组件。将其连接到 /api/concierge，使用返回的不透明句柄保留对话，遵循现有设计指导，支持键盘操作，并确保可测试。
    ```
 
    ![Backer Concierge 聊天小组件运行中的截图](../../../../_images/tailspin-toys-backer-concierge-agent.png)
@@ -67,7 +67,7 @@ UI 现在有了经过验证的后端。端到端测试将同时检查可用性�
 2. 保持 Function 和网站运行，然后验证完整体验：
 
    ```text
-   Use Playwright MCP to test the Backer Concierge widget end to end. Verify the core chat flow, conversation continuity, keyboard and accessibility behavior, grounding boundaries, and safe use of the local proxy. Report the results and fix any failures.
+   使用 Playwright MCP 对 Backer Concierge 组件进行端到端测试。验证核心聊天流程、对话连续性、键盘和无障碍行为、依据边界，以及本地代理的安全使用情况。报告结果并修复任何失败项。
    ```
 
 3. 根据议题验收标准审阅测试结果和更改：回答有数据依据、不虚构筹款金额、提出一个澄清问题、提供无障碍 UI 和端到端测试覆盖。确认失败项已修复，并重新运行受影响的检查。

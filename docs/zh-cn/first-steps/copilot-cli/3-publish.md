@@ -19,7 +19,7 @@ lastUpdated: 2026-09-28
 发送以下提示词：
 
 ```plaintext
-Initialize this folder as a Git repository, create an initial commit, and create a new public GitHub repository named space-quiz in my account. Push the current branch and set it as the default branch.
+将此文件夹初始化为 Git 存储库，创建初始提交，并在我的帐户中创建名为 space-quiz 的新公共 GitHub 存储库。推送当前分支并将其设为默认分支。
 ```
 
 在智能体请求时逐一批准 Git 和 GitHub 操作。
